@@ -56,7 +56,7 @@ html[data-theme="dark"] {
 
 /* new masthead bands */
 .masthead__band {
-  background: linear-gradient(90deg, mix(#000, #071029, 12%), #071029);
+  background: linear-gradient(90deg, #f0f2f4, #cfcfcf);
 }
 .masthead__neon {
   background: var(--tech-accent-gradient);
@@ -91,6 +91,7 @@ html[data-theme="dark"] {
 
 .sidebar {
   position: relative; /* ensure accent positions correctly */
+  border-right: 1px solid rgba(255,255,255,0.06); /* light thin divider between sidebar and main */
 }
 
 /* colourful icon treatment for sidebar */

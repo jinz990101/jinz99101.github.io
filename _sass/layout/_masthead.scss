@@ -55,43 +55,15 @@
   flex: 1 1 auto;
 }
 
-.masthead__name-wrap {
-  flex: 0 0 260px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  position: relative;
-}
+/* name is displayed as a menu item on the left; no separate name-wrap */
 
-.masthead__name {
-  position: relative;
-  padding: 0.6rem 1rem;
-  border-radius: 10px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  box-shadow: 0 6px 24px rgba(10,20,40,0.35);
-}
-
-.masthead__name-script {
-  display: inline-block;
-  font-family: 'Great Vibes', 'Playfair Display', Georgia, serif; /* fallback */
-  font-size: 1.9rem;
-  line-height: 1;
+/* name as menu item (left) */
+.masthead__menu-item--name a {
+  font-family: 'Great Vibes', 'Playfair Display', Georgia, serif;
+  font-size: 1.6rem; /* only increase font size */
+  padding-right: 0.6rem;
   color: var(--global-text-color);
-  letter-spacing: 0.6px;
 }
-
-.masthead__name-corner {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 2px;
-  background: var(--tech-metal-color, rgba(197,176,126,0.9));
-  box-shadow: 0 2px 6px rgba(0,0,0,0.6);
-}
-.masthead__name-corner.deco-tl { top: -6px; left: -6px; transform: rotate(12deg); }
-.masthead__name-corner.deco-tr { top: -6px; right: -6px; transform: rotate(-12deg); }
-.masthead__name-corner.deco-br { bottom: -6px; right: -6px; transform: rotate(12deg); }
-.masthead__name-corner.deco-bl { bottom: -6px; left: -6px; transform: rotate(-12deg); }
 
 /* bands at bottom of masthead: deep band + neon band */
 .masthead__bands {
@@ -102,8 +74,8 @@
   pointer-events: none;
 }
 .masthead__band {
-  height: 12px; /* deeper near-black band */
-  background: linear-gradient(90deg, rgba(5,8,15,1), rgba(10,14,26,1));
+  height: 12px; /* silver gradient band */
+  background: linear-gradient(90deg, #f0f2f4, #cfcfcf);
 }
 .masthead__neon {
   height: 8px; /* neon strip above the deep band */
@@ -112,17 +84,23 @@
   box-shadow: 0 8px 30px rgba(25,179,255,0.16);
 }
 
-/* empty right area gradient — growing subtle futuristic feel */
-.masthead__name-wrap::after {
-  content: "";
-  position: absolute;
-  left: -40px;
-  right: -220px;
-  bottom: 0;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(25,40,70,0.06), rgba(25,40,70,0.12));
-  pointer-events: none;
-  z-index: 1;
+/* vertical neon separators between left items */
+.masthead__sep {
+  display: inline-block;
+  width: 8px;
+  height: 28px;
+  margin: 0 0.6rem;
+  vertical-align: middle;
+}
+.masthead__sep--neon {
+  background: var(--tech-accent-gradient);
+  box-shadow: 0 8px 26px var(--tech-accent-glow);
+  border-radius: 2px;
+}
+
+@media (max-width: 48em) {
+  .masthead__menu-item--name a { font-size: 1.1rem; }
+  .masthead__sep { display: none; }
 }
 
 /* corner effect element (left-bottom) */
