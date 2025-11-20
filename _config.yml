@@ -24,7 +24,7 @@ repository               : "jinz990101/jinz990101.github.io"
 author:
   # Biographic information
   avatar           : #"profile.png"
-  name             : "Jin Zhao"
+  name             : #"Jin Zhao"
   pronouns         : # example: "she/her"  
   bio              : #"Short biography for the left-hand sidebar"
   location         : "Suzhou, China"
@@ -355,4 +355,3 @@ compress_html:
   clippings: all
   ignore:
     envs: development
-title: 'TEST TITLE - Jin Zhao'
