@@ -52,20 +52,21 @@ html[data-theme="dark"] {
 }
 
 /* decorative components used by the masthead and sidebar */
-.masthead__accent {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 4px;
+.masthead__accent { display: none; } /* legacy small accent hidden; replaced by wider bands */
+
+/* new masthead bands */
+.masthead__band {
+  background: linear-gradient(90deg, mix(#000, #071029, 12%), #071029);
+}
+.masthead__neon {
   background: var(--tech-accent-gradient);
-  box-shadow: 0 6px 18px var(--tech-accent-glow);
-  pointer-events: none;
+  box-shadow: 0 10px 36px rgba(25,179,255,0.14);
 }
 
 .sidebar__accent {
   position: absolute;
-  left: 0;
+  /* place accent at the inner edge between content and sidebar */
+  left: -6px;
   top: 0;
   bottom: 0;
   width: 6px;
@@ -90,4 +91,13 @@ html[data-theme="dark"] {
 
 .sidebar {
   position: relative; /* ensure accent positions correctly */
+}
+
+/* colourful icon treatment for sidebar */
+.sidebar i.fa, .sidebar i.ai {
+  display: inline-block;
+  background: linear-gradient(45deg, #19b3ff, #7ef4ff, #ff6ad5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 6px rgba(25,179,255,0.08));
 }

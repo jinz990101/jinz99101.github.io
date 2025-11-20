@@ -2,27 +2,46 @@
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><span class="navicon"></span></button>
-        <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist"><a href="{{ base_path }}/">{{ site.title }}</a></li>
-          {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
-              {% assign domain = '' %}
-            {% else %}
-              {% assign domain = base_path %}
-            {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-          <li id="theme-toggle" class="masthead__menu-item persist tail">
-            <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
-          </li>
-        </ul>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
+    <div class="masthead__grid">
+      <div class="masthead__menu">
+        <nav id="site-nav" class="greedy-nav">
+          <button><span class="navicon"></span></button>
+          <ul class="visible-links">
+            {% for link in site.data.navigation.main %}
+              {% if link.url contains 'http' %}
+                {% assign domain = '' %}
+              {% else %}
+                {% assign domain = base_path %}
+              {% endif %}
+              <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+            <li id="theme-toggle" class="masthead__menu-item persist tail">
+              <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
+            </li>
+          </ul>
+          <ul class="hidden-links hidden"></ul>
+        </nav>
+      </div>
+
+      <div class="masthead__name-wrap" aria-hidden="false">
+        <div class="masthead__name">
+          <span class="masthead__name-script">{{ site.author.name | default: site.title }}</span>
+          <span class="masthead__name-corner deco-tl"></span>
+          <span class="masthead__name-corner deco-tr"></span>
+          <span class="masthead__name-corner deco-br"></span>
+          <span class="masthead__name-corner deco-bl"></span>
+        </div>
+      </div>
     </div>
-      <!-- decorative accent bar (tech theme) -->
-      <div class="masthead__accent" aria-hidden="true"></div>
+
+    <!-- decorative bands: deep band + neon band -->
+    <div class="masthead__bands" aria-hidden="true">
+      <div class="masthead__band"></div>
+      <div class="masthead__neon"></div>
     </div>
+
+  </div>
 </div>
+
+<!-- corner glow effect (left-bottom) -->
+<div class="corner-effect" aria-hidden="true"></div>
