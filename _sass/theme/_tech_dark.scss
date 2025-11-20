@@ -1,0 +1,93 @@
+/* ==========================================================================
+   TECH THEME - DARK
+   ========================================================================== */
+
+/* Accent and core colors */
+$tech-bg: #0B0F14;
+$tech-deep: #071029;
+$tech-accent-1: #0f3dff;
+$tech-accent-2: #19b3ff;
+$tech-metal: #C5B07E;
+$text-main: #DDE6F2;
+$text-muted: #9FB3C8;
+
+/* Basic semantic colors (keep same names as other themes so includes work) */
+$danger-color               : #ee5f5b;
+$info-color                 : #2f7f93;
+$notice-color               : #7a8288;
+$success-color              : #62c462;
+$warning-color              : #f89406;
+
+$border-radius: 6px;
+$global-transition: all 0.18s ease-in-out;
+$masthead-height: 70px;
+$box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
+$navicon-width: 28px;
+$navicon-height: 4px;
+$sidebar-link-max-width: 250px;
+$sidebar-screen-min-width: 1024px;
+
+html[data-theme="dark"] {
+  --global-base-color: #{$tech-deep};
+  --global-bg-color: #{$tech-bg};
+  --global-footer-bg-color: #{$tech-deep};
+  --global-border-color: mix(#fff, #{$tech-deep}, 8%);
+  --global-dark-border-color: mix(#000, #{$tech-deep}, 12%);
+  --global-code-background-color: #0b1220;
+  --global-code-text-color: #c9d9ef;
+  --global-fig-caption-color: #9fb3c8;
+  --global-link-color: #{$tech-accent-1};
+  --global-link-color-hover: #{$tech-accent-2};
+  --global-link-color-visited: mix(#000, #{$tech-accent-1}, 15%);
+  --global-masthead-link-color: #{$text-main};
+  --global-masthead-link-color-hover: #{$tech-accent-2};
+  --global-text-color: #{$text-main};
+  --global-text-color-light: #c9d9ef;
+  --global-thead-color: mix(#fff, #{$tech-deep}, 6%);
+
+  /* tech-specific variables */
+  --tech-accent-gradient: linear-gradient(90deg, #{$tech-accent-1}, #{$tech-accent-2});
+  --tech-metal-color: #{$tech-metal};
+  --tech-accent-glow: rgba(25,179,255,0.14);
+}
+
+/* decorative components used by the masthead and sidebar */
+.masthead__accent {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: var(--tech-accent-gradient);
+  box-shadow: 0 6px 18px var(--tech-accent-glow);
+  pointer-events: none;
+}
+
+.sidebar__accent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: var(--tech-accent-gradient);
+  border-right: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 0 14px rgba(15,61,255,0.06) inset;
+  pointer-events: none;
+}
+
+.masthead a,
+.masthead .masthead__menu-item a {
+  color: var(--global-masthead-link-color);
+  transition: color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+.masthead a:hover,
+.masthead .masthead__menu-item a:hover {
+  color: var(--global-masthead-link-color-hover);
+  transform: translateY(-2px);
+  text-shadow: 0 2px 8px var(--tech-accent-glow);
+}
+
+.sidebar {
+  position: relative; /* ensure accent positions correctly */
+}

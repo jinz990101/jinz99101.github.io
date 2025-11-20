@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-site_theme               : "default" # Currently available options are "default", "air"
+site_theme               : "tech" # Currently available options are "default", "air", "tech"
 title                    : "Jin Zhao"
 title_separator          : #"-"
 name                     : &name "Jin Zhao"

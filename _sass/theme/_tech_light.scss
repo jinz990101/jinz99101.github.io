@@ -1,0 +1,65 @@
+/* ==========================================================================
+   TECH THEME - LIGHT (day variant)
+   ========================================================================== */
+
+/* Light variant keeps subtle tech accents while remaining academic-friendly */
+$tech-light-bg: #F6F8FA;
+$tech-light-panel: #ffffff;
+$tech-accent-1: #0f3dff;
+$tech-accent-2: #19b3ff;
+$tech-metal: #C5B07E;
+$text-dark: #0B1A2B;
+$text-muted-dark: #6d7d8b;
+
+/* Basic semantic colors (mirror defaults so mixins and components work) */
+$danger-color               : #ee5f5b;
+$info-color                 : #2f7f93;
+$notice-color               : #7a8288;
+$success-color              : #62c462;
+$warning-color              : #f89406;
+
+$box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
+$navicon-width: 28px;
+$navicon-height: 4px;
+$sidebar-link-max-width: 250px;
+$sidebar-screen-min-width: 1024px;
+
+html:not([data-theme="dark"]) {
+  --global-base-color: #{$tech-light-panel};
+  --global-bg-color: #{$tech-light-bg};
+  --global-footer-bg-color: #f2f4f7;
+  --global-border-color: mix(#000, #{$tech-light-panel}, 94%);
+  --global-dark-border-color: mix(#000, #{$tech-light-panel}, 85%);
+  --global-code-background-color: #f6f8fa;
+  --global-code-text-color: #0b1a2b;
+  --global-fig-caption-color: #6d7d8b;
+  --global-link-color: #{$tech-accent-1};
+  --global-link-color-hover: #{$tech-accent-2};
+  --global-masthead-link-color: #{$text-dark};
+  --global-masthead-link-color-hover: #{$tech-accent-1};
+  --global-text-color: #{$text-dark};
+  --global-text-color-light: #{$text-muted-dark};
+  --global-thead-color: mix(#000, #{$tech-light-panel}, 96%);
+
+  --tech-accent-gradient: linear-gradient(90deg, #{$tech-accent-1}, #{$tech-accent-2});
+  --tech-metal-color: #{$tech-metal};
+  --tech-accent-glow: rgba(15,61,255,0.08);
+}
+
+.masthead__accent {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(15,61,255,0.12), rgba(25,179,255,0.08));
+}
+
+.sidebar__accent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, rgba(15,61,255,0.12), rgba(25,179,255,0.06));
+}
